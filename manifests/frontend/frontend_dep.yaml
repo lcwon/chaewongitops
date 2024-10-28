@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: aksaz01devvvd01registry.azurecr.io/lcwon/chae_vue_crud_security
+          image: aksaz01devvvd01registry.azurecr.io/lcwon/chae_vue_crud_security:master
           ports:
             - containerPort: 80
 
