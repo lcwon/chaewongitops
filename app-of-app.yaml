@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-application
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: chaewonzz
+  project: default
+  source:
+    repoURL: 'https://github.com/lcwon/chaewongitops.git'
+    targetRevision: HEAD
+    path: manifests
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  # App-of-Apps 패턴: frontend와 backend 앱 설정
+  sources:
+    - name: frontend
+      path: manifests/frontend
+      repoURL: 'https://github.com/lcwon/chaewongitops.git'
+    - name: backend
+      path: manifests/backend
+      repoURL: 'https://github.com/lcwon/chaewongitops.git'
