@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image:aksaz01devvvd01registry.azurecr.io/lcwon/chae_springboot_crud_security 
+          image:aksaz01devvvd01registry.azurecr.io/lcwon/chae_springboot_crud_security:master
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
