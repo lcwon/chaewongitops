@@ -18,9 +18,7 @@ spec:
       selfHeal: true
   # App-of-Apps 패턴: frontend와 backend 앱 설정
   sources:
-    - name: frontend
-      path: manifests/frontend
+    - path: manifests/frontend
       repoURL: 'https://github.com/lcwon/chaewongitops.git'
-    - name: backend
-      path: manifests/backend
+    - path: manifests/backend
       repoURL: 'https://github.com/lcwon/chaewongitops.git'
